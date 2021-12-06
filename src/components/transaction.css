@@ -1,0 +1,31 @@
+.transaction-container {
+	display: grid;
+	justify-content: center;
+	gap: 0.25rem;
+	padding: 2rem 1rem;
+}
+.transactions {
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+	width: 90vw;
+	max-width: 800px;
+	padding: 0.5rem 1.25rem;
+	color: rgb(83, 81, 81);
+}
+.transaction-container header {
+	display: grid;
+	justify-content: space-between;
+}
+.transaction-container header select {
+	height: 2rem;
+	font-weight: bold;
+}
+@media (max-width: 768px) {
+	h2 {
+		font-size: 1.25rem;
+	}
+	h3 {
+		font-size: 1rem;
+	}
+}
