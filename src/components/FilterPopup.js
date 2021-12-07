@@ -1,4 +1,4 @@
-import { categories } from './AddForm'
+import { categories } from './global'
 import { useState } from 'react'
 
 const FilterPopup = ({ submittedFilter }) => {

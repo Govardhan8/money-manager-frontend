@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import EditForm from './EditPage'
 import './transaction.css'
+import OutsideClickHandler from 'react-outside-click-handler'
 
 const Transactions = ({ data }) => {
 	const [editPage, setEditPage] = useState(false)
@@ -36,15 +37,22 @@ const Transactions = ({ data }) => {
 					<p className='date'>{newDate}</p>
 				</div>
 			</div>
-			{editPage && (
-				<EditForm
-					data={data}
-					click={() => {
-						setEditPage(false)
-					}}
-					edit={edit}
-				/>
-			)}
+			<OutsideClickHandler
+				onOutsideClick={() => {
+					setEditPage(false)
+				}}
+			>
+				{editPage && (
+					<EditForm
+						data={data}
+						//Edit page for the transaction
+						click={() => {
+							setEditPage(false)
+						}}
+						edit={edit}
+					/>
+				)}
+			</OutsideClickHandler>
 		</>
 	)
 }

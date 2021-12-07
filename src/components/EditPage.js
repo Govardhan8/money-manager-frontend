@@ -5,23 +5,8 @@ import axios from 'axios'
 // import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { api_url } from '../App'
+import { api_url, categories } from './global'
 
-export const categories = [
-	'Checks,coupons',
-	'Child Support',
-	'Dues & grants',
-	'Gifts',
-	'Interests,dividends',
-	'Lending,renting',
-	'Lottery, gambling',
-	'refunds',
-	'Rental income',
-	'Sale',
-	'Wage,invoices',
-	'Vehicle',
-	'work',
-]
 function refreshPage() {
 	window.location.reload(false)
 }

@@ -1,5 +1,5 @@
 import Card from './Card'
-import { api_url } from '../App'
+import { api_url } from './global'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Transactions from './Transactions'
