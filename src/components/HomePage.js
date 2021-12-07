@@ -1,12 +1,12 @@
-import Card from './Card'
+import Card from './Card/Card'
 import { api_url } from './global'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import Transactions from './Transactions'
-import Add from './Add'
+import Transactions from './Transactions/Transactions'
+import Add from './Add/Add'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
-import FilterPopup from './FilterPopup'
-import './filter.css'
+import FilterPopup from './Filter/FilterPopup'
+import './Filter/filter.css'
 
 const HomePage = () => {
 	const [data, setData] = useState(null)

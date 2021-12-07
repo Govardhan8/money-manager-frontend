@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import EditForm from './EditPage'
+import EditForm from '../Forms/EditPage'
 import './transaction.css'
 import OutsideClickHandler from 'react-outside-click-handler'
 

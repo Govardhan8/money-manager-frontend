@@ -5,14 +5,14 @@ import axios from 'axios'
 // import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { api_url, categories } from './global'
+import { api_url, categories } from '../global'
 
 function refreshPage() {
 	window.location.reload(false)
 }
-const EditForm = ({ data, edit, click }) => {
+const AddForm = ({ click }) => {
 	const submitForm = (values) => {
-		axios.put(`${api_url}/transactions/${data._id}`, values).then(() => {
+		axios.post(`${api_url}/transactions/add`, values).then(() => {
 			click()
 			refreshPage()
 		})
@@ -32,25 +32,22 @@ const EditForm = ({ data, edit, click }) => {
 	const { values, handleSubmit, handleChange, handleBlur, errors, touched } =
 		useFormik({
 			initialValues: {
-				description: data.description,
-				date: data.date,
-				amount: data.amount,
-				division: data.division,
-				category: data.category,
-				type: data.type,
+				description: '',
+				date: '',
+				amount: '',
+				division: '',
+				category: '',
+				type: '',
 			},
 			validationSchema: validations,
 			onSubmit: (values) => {
-				if (!edit) {
-					submitForm(values)
-				}
+				submitForm(values)
 			},
 		})
 
 	return (
 		<form className='form' onSubmit={handleSubmit}>
 			<div className='relative'>
-				<span>Edit page</span>
 				<CloseSharpIcon
 					className='close'
 					onClick={() => {
@@ -137,11 +134,11 @@ const EditForm = ({ data, edit, click }) => {
 			<span style={{ color: 'red', fontSize: '0.75rem', marginLeft: '1rem' }}>
 				{errors.type && touched.type && errors.type}
 			</span>
-			<Button variant='contained' type='submit' disabled={!edit}>
+			<Button variant='contained' type='submit'>
 				SUBMIT
 			</Button>
 		</form>
 	)
 }
 
-export default EditForm
+export default AddForm

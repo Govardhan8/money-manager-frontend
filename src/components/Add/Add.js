@@ -2,7 +2,7 @@ import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp
 // import InfoIcon from '@mui/icons-material/Info'
 import './add.css'
 import { useState } from 'react'
-import AddForm from './AddForm'
+import AddForm from '../Forms/AddForm'
 import OutsideClickHandler from 'react-outside-click-handler'
 
 const Add = () => {
