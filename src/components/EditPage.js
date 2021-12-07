@@ -25,9 +25,9 @@ export const categories = [
 function refreshPage() {
 	window.location.reload(false)
 }
-const AddForm = ({ click }) => {
+const EditForm = ({ data, edit, click }) => {
 	const submitForm = (values) => {
-		axios.post(`${api_url}/transactions/add`, values).then(() => {
+		axios.put(`${api_url}/transactions/${data._id}`, values).then(() => {
 			click()
 			refreshPage()
 		})
@@ -47,22 +47,25 @@ const AddForm = ({ click }) => {
 	const { values, handleSubmit, handleChange, handleBlur, errors, touched } =
 		useFormik({
 			initialValues: {
-				description: '',
-				date: '',
-				amount: '',
-				division: '',
-				category: '',
-				type: '',
+				description: data.description,
+				date: data.date,
+				amount: data.amount,
+				division: data.division,
+				category: data.category,
+				type: data.type,
 			},
 			validationSchema: validations,
 			onSubmit: (values) => {
-				submitForm(values)
+				if (!edit) {
+					submitForm(values)
+				}
 			},
 		})
 
 	return (
 		<form className='form' onSubmit={handleSubmit}>
 			<div className='relative'>
+				<span>Edit page</span>
 				<CloseSharpIcon
 					className='close'
 					onClick={() => {
@@ -148,11 +151,11 @@ const AddForm = ({ click }) => {
 			<span style={{ color: 'red', fontSize: '0.75rem', marginLeft: '1rem' }}>
 				{errors.type && touched.type && errors.type}
 			</span>
-			<Button variant='contained' type='submit'>
+			<Button variant='contained' type='submit' disabled={!edit}>
 				SUBMIT
 			</Button>
 		</form>
 	)
 }
 
-export default AddForm
+export default EditForm

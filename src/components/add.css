@@ -45,3 +45,9 @@
 	font-size: 2rem;
 	border: 1px solid blue;
 }
+
+.relative span {
+	position: absolute;
+	top: -1rem;
+	left: 0;
+}
