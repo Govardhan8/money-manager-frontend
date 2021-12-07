@@ -20,10 +20,10 @@ const AddForm = ({ click }) => {
 
 	const validations = Yup.object().shape({
 		description: Yup.string().trim().required('Description is Required'),
-		date: Yup.date().required('please enter a rating'),
+		date: Yup.date().required('please enter a date'),
 		amount: Yup.number()
 			.min(1, 'minimum of 1rs needed')
-			.required('summary required'),
+			.required('amount is required'),
 		division: Yup.string().required('division required'),
 		category: Yup.string().required('category required'),
 		type: Yup.string().required('type required'),

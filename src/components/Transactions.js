@@ -4,10 +4,8 @@ import './transaction.css'
 import OutsideClickHandler from 'react-outside-click-handler'
 
 const Transactions = ({ data }) => {
+	//To check if editing is allowed or not
 	const [editPage, setEditPage] = useState(false)
-	const date = new Date(data.date)
-	const month = date.getMonth() + 1
-	const newDate = date.getDate() + '/' + month + '/' + date.getFullYear()
 	const editOption = () => {
 		const timestamp = new Date(data.timestamp)
 		const currDate = new Date()
@@ -15,13 +13,18 @@ const Transactions = ({ data }) => {
 		return edit
 	}
 	const edit = editOption()
+
+	//To display timing for the transaction
+	const date = new Date(data.date)
+	const month = date.getMonth() + 1
+	const newDate = date.getDate() + '/' + month + '/' + date.getFullYear()
+
 	return (
 		<>
 			<div
 				className='transactions'
 				onClick={() => {
 					setEditPage(!editPage)
-					console.log(data.timestamp, edit)
 				}}
 			>
 				<p className='category'>{data.category}</p>
@@ -42,6 +45,7 @@ const Transactions = ({ data }) => {
 					setEditPage(false)
 				}}
 			>
+				{/* Displaying edit page when clicked on the transaction */}
 				{editPage && (
 					<EditForm
 						data={data}
