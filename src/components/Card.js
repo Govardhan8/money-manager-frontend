@@ -9,7 +9,7 @@ const Card = ({ data }) => {
 		let expenseAmount = 0
 		let incomeAmount = 0
 		data.forEach((data) => {
-			if (data.type.toLowerCase() === 'expense') {
+			if (data.type === 'expense') {
 				expenseAmount += data.amount
 			} else {
 				incomeAmount += data.amount
@@ -22,10 +22,10 @@ const Card = ({ data }) => {
 	return (
 		<div className='card'>
 			<p className='info'>
-				<b>Expense</b> <span style={{ color: 'green' }}>₹{expense}</span>{' '}
+				<b>Expense</b> <span style={{ color: 'red' }}>₹{expense}</span>{' '}
 			</p>
 			<p className='info'>
-				<b>Income</b> <span style={{ color: 'red' }}>₹{income}</span>{' '}
+				<b>Income</b> <span style={{ color: '#12e42b' }}>₹{income}</span>{' '}
 			</p>
 		</div>
 	)

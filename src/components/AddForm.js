@@ -7,7 +7,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { api_url } from '../App'
 
-const categories = [
+export const categories = [
 	'Checks,coupons',
 	'Child Support',
 	'Dues & grants',
@@ -109,8 +109,8 @@ const AddForm = ({ click }) => {
 				onBlur={handleBlur}
 			>
 				<option>--Select a division--</option>
-				<option>PERSONAL</option>
-				<option>OFFICE</option>
+				<option>personal</option>
+				<option>office</option>
 			</select>
 			<span style={{ color: 'red', fontSize: '0.75rem', marginLeft: '1rem' }}>
 				{' '}
@@ -140,8 +140,8 @@ const AddForm = ({ click }) => {
 				onBlur={handleBlur}
 			>
 				<option>--Select a type--</option>
-				<option>INCOME</option>
-				<option>EXPENSE</option>
+				<option>income</option>
+				<option>expense</option>
 			</select>
 			<span style={{ color: 'red', fontSize: '0.75rem', marginLeft: '1rem' }}>
 				{errors.type && touched.type && errors.type}

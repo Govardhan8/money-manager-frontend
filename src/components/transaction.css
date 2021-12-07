@@ -1,8 +1,15 @@
+.container {
+	display: grid;
+	place-content: center;
+}
+
 .transaction-container {
 	display: grid;
 	justify-content: center;
 	gap: 0.25rem;
 	padding: 2rem 1rem;
+	max-width: 800px;
+	position: relative;
 }
 .transactions {
 	display: flex;
@@ -12,14 +19,20 @@
 	max-width: 800px;
 	padding: 0.5rem 1.25rem;
 	color: rgb(83, 81, 81);
+	border-radius: 0.35rem;
 }
 .transaction-container header {
 	display: grid;
+}
+.transaction-container header h2 {
+	display: flex;
+	align-items: center;
 	justify-content: space-between;
 }
 .transaction-container header select {
 	height: 2rem;
 	font-weight: bold;
+	max-width: 400px;
 }
 @media (max-width: 768px) {
 	h2 {

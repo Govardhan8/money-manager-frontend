@@ -5,6 +5,7 @@
 }
 .info {
 	background-color: white;
-	padding: 1.5rem 0rem 1.5rem 2.5rem;
+	padding: 1.25rem 0rem 1.25rem 2.5rem;
 	display: grid;
+	border-radius: 0.5rem;
 }
