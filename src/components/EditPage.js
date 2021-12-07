@@ -73,6 +73,7 @@ const EditForm = ({ data, edit, click }) => {
 			<TextField
 				id='date'
 				name='date'
+				label='date & time'
 				type='datetime-local'
 				value={values.date}
 				onChange={handleChange}

@@ -1,4 +1,5 @@
 import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp'
+import InfoIcon from '@mui/icons-material/Info'
 import './add.css'
 import { useState } from 'react'
 import AddForm from './AddForm'
@@ -16,6 +17,7 @@ const Add = () => {
 					toggleForm()
 				}}
 			/>
+			<InfoIcon className='infoIcon' />
 			<OutsideClickHandler
 				onOutsideClick={() => {
 					setVisible(false)
