@@ -30,9 +30,10 @@
 	justify-content: space-between;
 }
 .transaction-container header select {
-	height: 2rem;
+	height: 3rem;
 	font-weight: bold;
 	max-width: 400px;
+	border-radius: 0.5rem;
 }
 @media (max-width: 768px) {
 	h2 {
