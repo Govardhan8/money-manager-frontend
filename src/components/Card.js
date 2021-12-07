@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './card.css'
+// import Graph from './Graph'
 
 const Card = ({ data }) => {
 	const [income, setIncome] = useState(0)
@@ -20,14 +21,17 @@ const Card = ({ data }) => {
 	}, [data])
 
 	return (
-		<div className='card'>
-			<p className='info'>
-				<b>Expense</b> <span style={{ color: 'red' }}>₹{expense}</span>{' '}
-			</p>
-			<p className='info'>
-				<b>Income</b> <span style={{ color: '#12e42b' }}>₹{income}</span>{' '}
-			</p>
-		</div>
+		<>
+			{/* <Graph expense={expense} income={income} /> */}
+			<div className='card'>
+				<p className='info'>
+					<b>Expense</b> <span style={{ color: 'red' }}>₹{expense}</span>{' '}
+				</p>
+				<p className='info'>
+					<b>Income</b> <span style={{ color: '#12e42b' }}>₹{income}</span>{' '}
+				</p>
+			</div>
+		</>
 	)
 }
 
