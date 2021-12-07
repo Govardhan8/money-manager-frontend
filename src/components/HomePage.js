@@ -57,7 +57,7 @@ const HomePage = () => {
 							Transactions overview{' '}
 							<FilterAltIcon
 								onClick={() => setFilterVisible(!filterVisible)}
-								sx={{ color: 'white' }}
+								sx={{ color: 'white', cursor: 'pointer' }}
 							/>
 						</h2>
 
