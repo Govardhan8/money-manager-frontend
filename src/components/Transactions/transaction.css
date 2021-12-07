@@ -23,6 +23,8 @@
 }
 .transaction-container header {
 	display: grid;
+	width: 90vw;
+	max-width: 800px;
 }
 .transaction-container header h2 {
 	display: flex;

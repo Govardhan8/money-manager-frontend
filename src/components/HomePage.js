@@ -37,6 +37,8 @@ const HomePage = () => {
 			getData({ division })
 		} else if (category && category !== '--select a category--') {
 			getData({ category })
+		} else {
+			getData()
 		}
 	}
 
@@ -82,9 +84,13 @@ const HomePage = () => {
 					<h3>Expenditure</h3>
 					<Card data={filteredData} />
 					<h3>Transactions</h3>
-					{filteredData.map((data) => (
-						<Transactions key={data._id} data={data} />
-					))}
+					{filteredData.length > 0 ? (
+						filteredData.map((data) => (
+							<Transactions key={data._id} data={data} />
+						))
+					) : (
+						<p style={{ color: 'white' }}>No transactions to show</p>
+					)}
 				</div>
 			)}
 			<Add />
